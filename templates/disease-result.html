@@ -1,0 +1,31 @@
+
+{% extends 'layout.html' %} {% block body %}
+
+
+<div class="container py-2 mx-auto my-50 h-10 " style="margin: 9rem;">
+  <div class="row">
+      <div class="col-sm py-2 py-md-3">
+          <div class="card card-body" style="justify-content: center; background-color:blanchedalmond">
+            {% if disease %}
+    <h3 class="text-center" style="color: black; font-size: 24px;">Disease Details</h3>
+    <ul class="text-center" style="color: black; font-size: 22px; list-style: none; padding: 0;">
+        {% for key, value in disease.items() %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if suggestion %}
+    <h3 class="text-center" style="color: black; font-size: 24px;">Suggestions</h3>
+    <ul class="text-center" style="color: black; font-size: 22px; list-style: none; padding: 0;">
+        {% for key, value in suggestion.items() %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}
